@@ -16,8 +16,8 @@ void mean(){
         for(int j = 0; j < 9; j++){
             fin >> zahl;
             sum += zahl;
-            mean =sum/9;
         }
+            mean =sum/9;
  for(int i = 0; i < 9; i++){
     fin2 >> zahl;
     var += (zahl - mean)*(zahl - mean);
