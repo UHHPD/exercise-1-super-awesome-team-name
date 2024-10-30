@@ -2,19 +2,10 @@
 #include <fstream>
 #include <cmath>
 
-double variance(int N, double mean){
-  std::ifstream fin("datensumme.txt");
-  double var = 0;
-  int zahl = 0;
-  for(int i = 0; i < N; i++){
-    fin >> zahl;
-    var += (zahl - mean)*(zahl - mean);
-  }
-  return var/N;
-}
 
 void mean(int N){
     std::ifstream fin("datensumme.txt");
+  std::ifstream fin2("datensumme.txt");
     std::ofstream fout("mittelwerte.txt");
     std::ofstream fout2("varianzen.txt");
       double sum = 0;
@@ -27,7 +18,11 @@ void mean(int N){
             sum += zahl;
             mean =sum/9;
         }
-var = variance(9, mean);
+ for(int i = 0; i < 9; i++){
+    fin2 >> zahl;
+    var += (zahl - mean)*(zahl - mean);
+  }
+
        fout << mean << std::endl;
         fout2 << var <<std::endl;
         sum = 0; 
