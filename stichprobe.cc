@@ -12,7 +12,7 @@ double mean(int N){
   
   
   double mean = 0;
-  for(int i = 0; i <= N; i++){
+  for(int i = 0; i < N; i++){
     fin >> zahl;
     sum += zahl;
   }
@@ -27,7 +27,7 @@ double variance(int N, double mean){
   std::ifstream fin("datensumme.txt");
   double var = 0;
   int zahl = 0;
-  for(int i = 0; i <= N; i++){
+  for(int i = 0; i < N; i++){
     fin >> zahl;
     var += (zahl - mean)*(zahl - mean);
   }
