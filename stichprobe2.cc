@@ -3,7 +3,7 @@
 #include <cmath>
 
 
-void mean(int N){
+void mean(){
     std::ifstream fin("datensumme.txt");
   std::ifstream fin2("datensumme.txt");
     std::ofstream fout("mittelwerte.txt");
@@ -39,7 +39,6 @@ double std_deviation(int N, double var){
 }
 
 int main(){
-    int N = 234;
-   mean(N);
+   mean();
 
 }
