@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cmath>
 
 
 
@@ -33,10 +34,14 @@ double variance(int N, double mean){
   return var/N;
 }
 
-
+double std_deviation(int N, double var){
+  return sqrt(var);
+}
 
 int main(){
-  int N = 234;
-  std::cout << "Mean: " << mean(N) << std::endl;
-  std::cout << "Variance: " << variance(N, mean(N)) << std::endl;
+    int N = 234;
+    std::cout << "Mean: " << mean(N) << std::endl;
+    std::cout << "Variance: " << variance(N, mean(N)) << std::endl;
+    std::cout << "Standard Deviation: " << std_deviation(N, variance(N, mean(N))) << std::endl;
+
 }
