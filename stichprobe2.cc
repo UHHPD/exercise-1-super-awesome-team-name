@@ -22,7 +22,7 @@ void mean(){
     fin2 >> zahl;
     var += (zahl - mean)*(zahl - mean);
   }
-
+var = var/9;
        fout << mean << std::endl;
         fout2 << var <<std::endl;
         sum = 0; 
