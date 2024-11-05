@@ -46,6 +46,36 @@ double std_deviation(int N, double var) {
     return sqrt(var);
 }
 
+void Mean_Var() {
+    std::ifstream fin("mittelwerte.txt");
+    std::ifstream fin2("varianzen.txt");
+
+    double sum_mean = 0;
+    double sum_var = 0;
+
+    for (int i = 0; i < 26; i++) {
+        double num_mean = 0;
+        double num_var = 0;
+
+        fin >> num_mean;
+        fin2 >> num_var;
+
+        sum_mean += num_mean;
+        sum_var += num_var;
+    }
+
+    double Mean = sum_mean / 26;
+    double Var = sum_var / 26;
+
+    std::cout << "Mean of means: " << Mean << std::endl;
+    std::cout << "Mean of variances: " << Var << std::endl;
+
+    fin.close();
+    fin2.close();
+}
+
 int main() {
     mean_var();
+    Mean_Var();
+    return 0;
 }
